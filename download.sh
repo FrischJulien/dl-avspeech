@@ -122,7 +122,7 @@ export -f get_time format_time format_seconds show_msg download_video
 trap 'printf "%s %s\n" "$(get_time)" "*** download interrupted ***"; exit 2' INT QUIT TERM
 printf "%s %s\n" "$(get_time)" "*** download starts ***"
 
-cat "$csvfile" | $parallel -j "$njobs" --timeout 600 --tmpdir "/content/drive/MyDrive/13_Product_Development/AVSpeech/temp/pip-4y3xsyg8-unpack" --compress download_video
+cat "$csvfile" | $parallel -j "$njobs" --timeout 600 --compress download_video
 
 printf "%s %s\n" "$(get_time)" "*** download ends ***"
 
